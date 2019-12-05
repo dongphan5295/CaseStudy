@@ -41,14 +41,6 @@ function disableCards() {
     }
 }
 
-function gameOver() {
-    stopTimer();
-    modal.style.display = 'block'; 
-    document.querySelector('.modal-header').style.display = 'block';
-    document.querySelector('.modal-body').style.display = 'block';
-    document.querySelector('.modal-footer').style.display = 'block';
-}
-
 function unflipCards() {
     lockBoard = true;
 
@@ -59,6 +51,16 @@ function unflipCards() {
         resetBoard();
     }, 800);
 }
+
+function gameOver() {
+    stopTimer();
+    modal.style.display = 'block';
+    document.querySelector('.modal-header').style.display = 'block';
+    document.querySelector('.modal-body').style.display = 'block';
+    document.querySelector('.modal-footer').style.display = 'block';
+}
+
+
 
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
@@ -80,8 +82,8 @@ function addMove() {
 }
 
 function resetMoves() {
-    const movesText = document.querySelector('moves');
     moves = 0;
+    const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
 
 }
@@ -130,9 +132,7 @@ function restartGame() {
     });
 
     matchCount = 0;
-    moves = 0;
-    const movesText = document.querySelector('.moves');
-    movesText.innerHTML = moves;
+    resetMoves();
     document.querySelector('.modal-footer').style.display = 'none';
     document.querySelector('.modal-header').style.display = 'none';
     document.querySelector('.modal-body').style.display = 'none';
@@ -147,8 +147,11 @@ resetBtn.addEventListener('click', resetPlay, false);
 function resetPlay() {
     stopTimer();
     resetTimer();
-    restartGame();
-
+    resetMoves();
+    cards.forEach(card => {
+        card.classList.remove('flip');
+        card.addEventListener('click', flipCard);
+    });
 }
 
 
