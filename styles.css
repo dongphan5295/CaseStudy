@@ -1,0 +1,228 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .title {
+    text-align: center;
+    font-style: italic;
+    color: rgb(245, 245, 250);
+    font-size: 30px
+    
+}
+  
+  body {
+    width: 100%;
+    height: 65%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-image: url('image/image9.jpg');
+    background-position : center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1550px 750px;
+    
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+  
+  .memory-game {
+    width: 550px;
+    height: 450px;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 800px;
+  }
+  
+  .memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  }
+  
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+  
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 13px;
+    position: absolute;
+    border-radius: 5px;
+    background: rgb(29, 6, 1);
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  }
+
+#resetBtn {
+  float: center;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.scoreheader .moves {
+  font-size: 20px;
+  color: wheat;
+  margin-right: auto;
+}
+
+.scoreheader .move {
+  font-size: 20px;
+  color: rgb(7, 170, 94);
+  margin-left: 10px;
+}
+
+.scoreheader .timer {
+  font-size: 20px;
+  color: white;
+  margin-left: 1em;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.button {
+  background-color: rgb(20, 163, 92);
+  padding: 1em 2em;
+  color: #fff;
+  border: 0;
+}
+
+.replay {
+  background-color: rgb(71, 13, 233);
+  padding: 1em 2em;
+  color: #fff;
+  border: 0;
+  /* margin-left: 14em; */
+}
+.reset {
+  color: rgb(250, 246, 246);
+  /* font-size: 15 px; */
+  font: italic;
+  /* border: black; */
+}
+
+
+.modal {
+  position:absolute;
+  display: none;
+  z-index: 1;
+  top:100px;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  /* background-color: rgba(7, 1, 17, 0.4); */
+}
+
+.modal-content {
+  background-image:url(image/image12.jpg) ;
+  width: 40%;
+  margin: auto;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: 3s;
+  text-align: center;
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+  background-image:url(image/image12.jpg) ;
+  padding: 30px;
+  color: #6a14b1;
+  text-align: center;
+  display: none;
+}
+
+.modal-body {
+  padding: 1px 10px;
+  display: none;
+  color: #861fda;
+  font: italic;
+}
+
+.modal-footer {
+  
+  background-image:url(image/image12.jpg) ;
+  padding: 10px;
+  color: #861fda;
+  text-align: center;
+  display: none;
+}
+
+.closeBtn {
+  color: rgb(46, 21, 92);
+  float: right;
+  font-size: 30px;
+  color: wheat;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* @keyframes modalopen {
+  from {
+      opacity: 0
+  }
+
+  to {
+      opacity: 1
+  }
+} */
+
+
+.shooter {
+  width: 100%;
+  height: auto;
+}
+.footer-img {
+  /* display: block; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  position: absolute;
+  height: auto;
+  justify-content: center;
+  
+}
+.move {
+  color: beige;
+}
+.moves {
+  color: beige;
+}
+.timer {
+  color: beige;
+}
